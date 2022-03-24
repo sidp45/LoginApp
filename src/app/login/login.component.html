@@ -1,0 +1,39 @@
+<div class=" flex-r container">
+    <div class="flex-r login-wrapper">
+      <div class="login-text">
+        <div class="logo">
+          <span><i class="fab fa-speakap"></i></span>
+          <img src="../assets/wissenlogo.PNG">
+        </div>
+        <h1>Hello there,Sign In to Continue</h1>
+        <form class="flex-c" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="input-box">
+            <span class="label">Email</span>
+            <div class="input">
+              <input type="text" formControlName="email" autocomplete='off' >
+            </div>
+          </div>
+  
+          <div class="input-box">
+            <span class="label">Password</span>
+            <div class="input">
+              <input [type]="password" formControlName="password"autocomplete='off'>
+              <i class="fas fa-eye" *ngIf="!show" (click)="onClick()"></i>
+              <i class="fas fa-eye-slash" *ngIf="show" aria-hidden="true" (click)="onClick()"></i>
+            </div>
+          </div>
+  
+          <div class="check">
+            <input type="checkbox" formControlName="check_box">
+            <span>By creating or logging into an account you,<br><span class="test-algin">are agreeing with our</span>
+              <b class="test">Term & Conditions</b> <br><span class="test-left">and</span><b class="test">Privacy
+                Policys</b></span>
+          </div>
+          <input class="btn" type="submit" [disabled]="!loginForm.valid" value="Next">
+          <div class="companyDetails">
+            <span class="color">Signin with company SSO</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
